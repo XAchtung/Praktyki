@@ -1,0 +1,19 @@
+<HTML>
+    <HEAD>
+        <TITLE>Calculator</TITLE>
+        <SCRIPT src="script.js" LANGUAGE="JavaScript"></SCRIPT>
+    </HEAD>
+    <BODY>
+        <div>Calculator:</div>
+        <FORM NAME="calc" ACTION="" METHOD="GET">Enter number in the box: <BR>
+            <INPUT TYPE="number" NAME="input1" VALUE=""><P>
+            <INPUT TYPE="number" NAME="input2" VALUE=""><P></P>
+            <input type="radio" name="wybierz" value="option1" onchange="" checked/> Dodawanie<br>
+            <input type="radio" name="wybierz" value="option2" onchange="" /> Odejmowanie<br>
+            <input type="radio" name="wybierz" value="option3" onchange="" /> Mnożenie<br>
+            <input type="radio" name="wybierz" value="option4" onchange="" /> Dzielenie<br>
+            <INPUT TYPE="button" NAME="button" Value="Click" onClick="solve(this.form)">
+        </FORM>
+        <div id="result"></div>
+    </BODY>
+</HTML>
