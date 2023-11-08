@@ -2,7 +2,7 @@ function solve(form){
     let word = form.input1.value;
 
     // document.getElementById("result").innerHTML = Palindrome(word);
-    if(word === Palindrome(word)){
+    if(word == Palindrome(word)){
         document.getElementById("result").innerHTML = "True";
     }else{
         document.getElementById("result").innerHTML = "False";
