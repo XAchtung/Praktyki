@@ -1,11 +1,11 @@
 const books = [
-    {title: 'Total loss 100', pages: 600, genre: 'fantasy' , rating: 8},
-    {title: 'Total enlightenment', pages: 250, genre: 'romance' , rating: 6},
-    {title: 'Big loss', pages: 400, genre: 'fantasy', rating: 3},
-    {title: 'Tenth Joy', pages: 32, genre: 'action', rating: 4},
-    {title: 'Quickfix number 4', pages: 15, genre: 'fantasy', rating: 9},
-    {title: 'World Ender 3', pages: 199, genre: 'fantasy', rating: 6},
-    {title: 'Paranormal', pages: 200, genre: 'thriller', rating: 1},
+    {title: 'Total loss 100', pages: 600, genre: 'fantasy', rating: 7},
+    {title: 'Total enlightenment', pages: 250, genre: 'romance', rating: 4},
+    {title: 'Big loss', pages: 400, genre: 'fantasy', rating: 2},
+    {title: 'Tenth Joy', pages: 32, genre: 'action', rating: 9},
+    {title: 'Quickfix number 4', pages: 15, genre: 'fantasy', rating: 8},
+    {title: 'World Ender 3', pages: 199, genre: 'fantasy', rating: 1},
+    {title: 'Paranormal', pages: 200, genre: 'thriller', rating: 5},
 ];
 
 //6
@@ -30,12 +30,11 @@ const result2 = compose2(countPositiveRating, isPositiveRating, odd, hasNumber,)
 
 console.log(result2(books));
 
-//8 niedokonczone
-const countTitle = (book) => book.map((book) => book.title.length);
-console.log(countTitle(books));
-const secondMax = (book) => book.filter((ele) => ele !== Math.max(...book)).reduce((acc, ele) => ele > acc ? ele : acc, book[0]);
+//8 
+const secondMax = (book) => book.sort((a, b) => b.title.length - a.title.length);
+const countTitle = (book) => book.map(({title}) => title);
 
 const compose3 = (...fns) => (x) => fns.reduceRight((acc, fn) => fn(acc), x);
-const result3 = compose3(secondMax);
+const result3 = compose3(countTitle, secondMax);
 
-console.log(result3(books));
+console.log(result3(books)[1]);
